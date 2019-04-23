@@ -1,13 +1,13 @@
-export default function Modal(opt) {
+export default function Modal (opt) {
   this.element = opt.element;
 }
 
-Modal.prototype.open = function() {
+Modal.prototype.open = function () {
   console.log('open', this.element);
-  document.body.classList.add('modal-open');
   this.element.classList.add('show');
 };
 
-Modal.prototype.close = () => {
-  console.log('close');
+Modal.prototype.close = function () {
+  console.log('close', this.element);
+  this.element.classList.remove('show');
 };

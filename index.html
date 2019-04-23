@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <title>Babel + Webpack, Loaders, Plugins + ESLint</title>
 </head>
 
@@ -16,33 +17,116 @@
       </nav>
     </header>
     <main>
+
+      <div class="card d-flex justify-content-center align-items-center" style="width: 18rem;">
+        <div class="modifyCard d-flex align-items-between">
+          <button type="button" class="js_modify fas fa-user-edit mx-3"></button>
+          <button type="button" class="js_delete fas fa-trash-alt mx-3"></button>
+        </div>
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body d-flex">
+          <h5 class="card-title">Name</h5>
+          <div>
+            <span>Number</span><span>Email</span>
+          </div>
+          <p>Country</p>
+          <p class="card-text">About me</p>
+          <a href="#" class="btn btn-primary">See my portfolio</a>
+        </div>
+
+      </div>
+
+
+
+
       <div class="container">
         <div id="users"></div>
         <div class="d-flex justify-content-center align-items-center" style="height: 100vh; margin-top: -56px">
-          <button class="btn btn-primary js_add">Agregar Usuario</button>
+          <button class="js_open_modal_form btn btn-primary">Add user</button>
+          <button class="js_open_modal_alert btn btn-primary">Delete user</button>
         </div>
       </div>
+
     </main>
 
-    <div class="modal fade js_modal">
+    <form>
+      <div class="js_modal_form modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-light">
+              <h5 class="modal-title">Add new user</h5>
+              <button type="button" class="js_close_upper_corner close">
+                <span>&times;</span>
+              </button>
+            </div>
+            <div class="modal-body bg-secondary text-white">
+
+              <p>Please fill out the following fields:</p>
+
+              <div class="form-row">
+                <div class="col">
+                  <input type="text" class="js_name form-control" placeholder="First name" required>
+                </div>
+                <div class="col">
+                  <input type="text" class="js_lastname form-control" placeholder="Last name" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                  <input type="email" class="js_email form-control" placeholder="Email" required>
+                </div>
+                <div class="col">
+                  <input type="text" class="js_phone form-control" placeholder="Your phone number" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                  <select id="inputState" class="js_country form-control">
+                    <option selected>Choose...</option>
+                    <option>Peru</option>
+                    <option>USA</option>
+                    <option>Poland</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <input type="text" class="js_url form-control" placeholder="Profile photo URL">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">About you</label>
+                <textarea class="js_aboutme form-control" id="exampleFormControlTextarea1" rows="3"
+                  placeholder="About me"></textarea>
+              </div>
+            </div>
+            <div class="modal-footer bg-light">
+              <button type="button" class="js_close_modal_form btn btn-secondary">Close</button>
+              <button type="submit" class="js_save_user btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="modal fade js_modal_alert">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
-            <button type="button" class="close">
+          <div class="modal-header text-warning">
+            <h5 class="modal-title">Warning!</h5>
+            <button type="button" class="js_close_upper_corner_alert close">
               <span>&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <p>Modal body text goes here.</p>
+          <div class="modal-body text-danger">
+            <p>Are you sure you wanna delete forever?</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="js_modify_user btn btn-primary">Yes</button>
+            <button type="button" class="js_close_modal_alert btn btn-secondary">No</button>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </body>
 
