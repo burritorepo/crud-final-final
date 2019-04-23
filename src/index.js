@@ -11,3 +11,4 @@ function addUser() {
   });
 }
 addUser();
+closeModal();
